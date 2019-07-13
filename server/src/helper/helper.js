@@ -92,4 +92,36 @@ export default class Helper {
     const password = await bycrpt.hash(plainTextPassword, gensalt);
     return password;
   }
+
+  /**
+   *
+   * Handle the logic to validate user input for sign in data
+   * @static
+   * @param {Object} user user sign in data
+   * @returns Object
+   * @memberof Helper
+   */
+  static validateSignin(user) {
+    const schema = {
+      email: Joi.string()
+        .email({ minDomainSegments: 2 })
+        .required(),
+      password: Joi.string().required()
+    };
+    return Joi.validate(user, schema);
+  }
+
+  /**
+   *
+   * Handles the logic to compare plaintext password with hashed password
+   * @static
+   * @param {String} plainTextPassword plaintext password to be compare
+   * @param {String} hashedPassword hashed password to be compare
+   * @returns Boolean
+   * @memberof Helper
+   */
+  static async compareHashedPassword(plainTextPassword, hashedPassword) {
+    const comparedPassword = await bycrpt.compare(plainTextPassword, hashedPassword);
+    return comparedPassword;
+  }
 }

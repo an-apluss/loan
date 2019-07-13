@@ -317,4 +317,90 @@ describe('Test Suite For User(sign up and sign in) Endpoints', () => {
         });
     });
   });
+  describe('POST /api/v1/auth/signin', () => {
+    it('should sign in user if login credentials are authentic', done => {
+      chai
+        .request(server)
+        .post('/api/v1/auth/signin')
+        .send({
+          email: 'anuoluwapoakinseye@gmail.com',
+          password: 'secret'
+        })
+        .end((err, res) => {
+          res.body.should.be.an('object');
+          res.body.status.should.be.eql(200);
+          res.body.success.should.be.eql(true);
+          res.body.data.token.should.be.a('string');
+          res.body.data.id.should.be.a('number');
+          res.body.data.first_name.should.be.a('string');
+          res.body.data.last_name.should.be.a('string');
+          res.body.data.email.should.be.a('string');
+          done();
+        });
+    });
+    it('should return error if email is invalid', done => {
+      chai
+        .request(server)
+        .post('/api/v1/auth/signin')
+        .send({
+          email: 'anuakin.com',
+          password: 'secret'
+        })
+        .end((err, res) => {
+          res.body.should.be.an('object');
+          res.body.status.should.be.eql(422);
+          res.body.success.should.be.eql(false);
+          res.body.error.should.be.a('string');
+          done();
+        });
+    });
+    it('should return error if email is empty', done => {
+      chai
+        .request(server)
+        .post('/api/v1/auth/signin')
+        .send({
+          email: '',
+          password: 'secret'
+        })
+        .end((err, res) => {
+          res.body.should.be.an('object');
+          res.body.status.should.be.eql(422);
+          res.body.success.should.be.eql(false);
+          res.body.error.should.be.a('string');
+          done();
+        });
+    });
+    it('should return error if password is empty', done => {
+      chai
+        .request(server)
+        .post('/api/v1/auth/signin')
+        .send({
+          email: 'anuakin.com',
+          password: ''
+        })
+        .end((err, res) => {
+          res.body.should.be.an('object');
+          res.body.status.should.be.eql(422);
+          res.body.success.should.be.eql(false);
+          res.body.error.should.be.a('string');
+          done();
+        });
+    });
+    it('should return error if user provide non-existing login credentials', done => {
+      chai
+        .request(server)
+        .post('/api/v1/auth/signin')
+        .send({
+          email: 'anuakin123@gmail.com',
+          password: 'secret123'
+        })
+        .end((err, res) => {
+          res.body.should.be.an('object');
+          res.body.status.should.be.eql(401);
+          res.body.success.should.be.eql(false);
+          res.body.error.should.be.a('string');
+          done();
+        });
+    });
+  });
 });
