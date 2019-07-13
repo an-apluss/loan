@@ -3,6 +3,18 @@
 # Loan
 This is a web application to management loan
 
+### API Deployment
+
+API is deployed at https://webloan.herokuapp.com
+
+## Built With
+
+<ul>
+<li><a href="https://nodejs.org/">NodeJS</a></li>
+<li><a href="https://expressjs.com/">ExpressJS</a></li>
+<li><a href="https://developer.mozilla.org/bm/docs/Web/JavaScript">JavaScript</a></li>
+</ul>
+
 ## Getting Started
 
 ### Installation
