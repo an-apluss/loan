@@ -3,6 +3,8 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import 'dotenv/config';
 
+import userRoute from './route/userRoute';
+
 const app = express();
 
 app.use(bodyParser.json());
@@ -13,6 +15,8 @@ app.get('/', (req, res) => {
     .status(200)
     .json({ status: 200, data: 'Welcome to loan management system!', success: true });
 });
+
+app.use('/api/v1/auth', userRoute);
 
 app.use((req, res, next) => {
   const error = new Error('Route Does not Exist');
