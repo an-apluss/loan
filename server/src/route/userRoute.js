@@ -5,9 +5,10 @@ import UserController from '../controller/userController';
 
 const userRoute = express.Router();
 
-const { checkSignup } = UserValidator;
-const { postSignUp } = UserController;
+const { checkSignup, checkSignin } = UserValidator;
+const { postSignUp, postSignIn } = UserController;
 
 userRoute.post('/signup', checkSignup, postSignUp);
+userRoute.post('/signin', checkSignin, postSignIn);
 
 export default userRoute;

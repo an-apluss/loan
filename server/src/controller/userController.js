@@ -24,4 +24,22 @@ export default class UserController {
       return next(ex);
     }
   }
+
+  /**
+   *
+   * Handles the logic to login/sign in user on the platform
+   * @static
+   * @param {Object} req
+   * @param {Object} res
+   * @returns JSON API Response
+   * @memberof UserController
+   */
+  static async postSignIn(req, res, next) {
+    try {
+      const response = await UserService.loginUser(req.body);
+      return res.status(response.status).send(response);
+    } catch (ex) {
+      return next(ex);
+    }
+  }
 }
