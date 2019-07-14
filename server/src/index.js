@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import 'dotenv/config';
 
 import userRoute from './route/userRoute';
+import loanRoute from './route/loanRoute';
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.get('/documentation', (req, res) => {
 });
 
 app.use('/api/v1/auth', userRoute);
+app.use('/api/v1/loan', loanRoute);
 
 app.use((req, res, next) => {
   const error = new Error('Route Does not Exist');

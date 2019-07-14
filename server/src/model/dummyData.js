@@ -18,6 +18,24 @@ const storage = {
       address: '2, surulere street, Nodopassyourself, Lagos',
       occupation: 'trader'
     }
+  ],
+  loans: [
+    {
+      id: 1,
+      name: 'Ren money',
+      description: 'Salary earners discounted loan',
+      interest_rate: '3%',
+      amount: 50000,
+      tenure: '1.5yrs'
+    },
+    {
+      id: 2,
+      name: 'Kia Kia',
+      description: 'Easy small loan',
+      interest_rate: '5%',
+      amount: 5000,
+      tenure: '3months'
+    }
   ]
 };
 
