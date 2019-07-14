@@ -7,6 +7,10 @@ This is a web application to management loan
 
 API is deployed at https://webloan.herokuapp.com
 
+### API Documentation
+
+API is documented at https://webloan.herokuapp.com/documentation
+
 ## Built With
 
 <ul>
@@ -19,7 +23,7 @@ API is deployed at https://webloan.herokuapp.com
 
 ### Installation
 
-- Clone this repository using `git clone https://github.com/an-apluss/AutoMart.git .`
+- Clone this repository using `git clone https://github.com/an-apluss/loan.git`
 - Use the `.env.sample` file to setup your environment variables and rename the file to `.env`
 - Run `npm install` to install all dependencies
 - Run `npm start` to start the server
