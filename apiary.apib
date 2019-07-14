@@ -1,0 +1,49 @@
+FORMAT: 1A
+HOST: https://webloan.herokuapp.com/api/v1
+
+# AutoMart
+
+This is a web application for loan management.documentation 
+
+## User Collection [/auth]
+   
+
+### Register a new user [POST/auth/signup]
+
++ Request (application/json)
+
+   + Attributes
+        + firstName: `anu` (string) - user firstname
+        + lastName: `akin` (string) - user lastname
+        + email: `anuakin@gmail.com` (string) - user email address
+        + password: `secret` (string) - user password
+        + address: `25, olasebikan street, Agbado, Lagos` (string) - user address
+        + occupation: `engineer` (string) - user occupation
+
++ Response 201 (application/json)
+
+    + Attributes (User response) 
+
+
+### Log In An Existing User [POST/auth/signin]
+
++ Request (application/json)
+
+   + Attributes
+        + email: `anuakin@gmail.com` (string) - user email address
+        + password: `secret` (string) - user password
+
++ Response 200 (application/json)
+
+   + Attributes (User response)
+
+
+# Data Structures
+
+## User response (object)
++ id: `1` (number) - user ID number
++ token: `544yiu4y090939849rl;kfliuwruy` (string) user generated token
++ first_name: `anu` (string) user first name
++ last_name: `akin` (string) user last name
++ email: `anuakin@gmail.com` (string) user email address
++ occupation: `engineer` (string) user email address

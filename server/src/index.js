@@ -16,6 +16,10 @@ app.get('/', (req, res) => {
     .json({ status: 200, data: 'Welcome to loan management system!', success: true });
 });
 
+app.get('/documentation', (req, res) => {
+  return res.redirect('https://webloan.docs.apiary.io');
+});
+
 app.use('/api/v1/auth', userRoute);
 
 app.use((req, res, next) => {
