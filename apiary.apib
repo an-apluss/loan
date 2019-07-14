@@ -1,14 +1,14 @@
 FORMAT: 1A
 HOST: https://webloan.herokuapp.com/api/v1
 
-# AutoMart
+# Loan
 
-This is a web application for loan management.documentation 
+This is a web application for basic loan management activities.
 
 ## User Collection [/auth]
    
 
-### Register a new user [POST/auth/signup]
+### Create a new user [POST/auth/signup]
 
 + Request (application/json)
 
@@ -37,6 +37,13 @@ This is a web application for loan management.documentation
 
    + Attributes (User response)
 
+## Loan Collection [/loan]
+
+### Fetch loans available [GET/loan]
+
++ Response 200 (application/json)
+
+    + Attributes (array [Fetch loans response])
 
 # Data Structures
 
@@ -47,3 +54,11 @@ This is a web application for loan management.documentation
 + last_name: `akin` (string) user last name
 + email: `anuakin@gmail.com` (string) user email address
 + occupation: `engineer` (string) user email address
+
+## Fetch loans response (object)
++ id: `1` (number) - loan ID,
++ name: `Ren money` (string) - loan name,
++ description: `Salary earners discounted loan` (string) - loan description,
++ interest_rate: `3%` (string) - loan interest rate,
++ amount: `50000` (number) - loan amount,
++ tenure: `1.5yrs` (string) - loan tenure

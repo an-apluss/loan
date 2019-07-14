@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/an-apluss/loan.svg?branch=master)](https://travis-ci.org/an-apluss/loan) [![Coverage Status](https://coveralls.io/repos/github/an-apluss/loan/badge.svg?branch=master)](https://coveralls.io/github/an-apluss/loan?branch=master)
 
 # Loan
-This is a web application to management loan
+This is a web application for basic loan management activities.
 
 ### API Deployment
 
